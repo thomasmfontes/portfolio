@@ -48,10 +48,17 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
           
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-xl)' }}>
             <div style={{ display: 'none', gap: 'var(--space-lg)' }} className="md:flex">
-              {['Início', 'Sobre', 'Skills', 'Projetos', 'Experiência', 'Contato'].map((item) => (
+              {[
+                { label: 'Início', id: 'inicio' },
+                { label: 'Sobre', id: 'sobre' },
+                { label: 'Skills', id: 'skills' },
+                { label: 'Projetos', id: 'projetos' },
+                { label: 'Experiência', id: 'experiencia' },
+                { label: 'Contato', id: 'contato' }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.id}
+                  href={`#${item.id}`}
                   style={{
                     color: 'var(--color-text-secondary)',
                     transition: 'color var(--transition-base)',
@@ -60,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
             </div>

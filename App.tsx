@@ -33,22 +33,32 @@ export default function App() {
     <div className="min-h-screen">
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
-      <Header
-        onScrollToProjects={() => scrollToSection(projectsRef)}
-        onScrollToContact={() => scrollToSection(contactRef)}
-      />
+      <section id="inicio">
+        <Header
+          onScrollToProjects={() => scrollToSection(projectsRef)}
+          onScrollToContact={() => scrollToSection(contactRef)}
+        />
+      </section>
 
-      <About />
-      <Skills />
+      <section id="sobre">
+        <About />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
       
-      <section ref={projectsRef}>
+      <section id="projetos" ref={projectsRef}>
         <Projects projects={projectsData} />
       </section>
 
-      <Experience experiences={experiencesData} />
+      <section id="experiencia">
+        <Experience experiences={experiencesData} />
+      </section>
+
       <Testimonials testimonials={testimonialsData} />
 
-      <section ref={contactRef}>
+      <section id="contato" ref={contactRef}>
         <Contact />
       </section>
 
