@@ -1,0 +1,597 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   DESIGN SYSTEM - VARIÁVEIS
+   ========================================================================== */
+
+:root {
+  /* Cores Base - Dark Mode (padrão) */
+  --color-dark: #0A0E1A;
+  --color-surface: #131824;
+  --color-border: #1F2937;
+  --color-accent: #00D5FF;
+  --color-accent-hover: #00C9FF;
+  
+  /* Cores de Texto */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94A3B8;
+  
+  /* Espaçamento (Sistema 8px) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 120px;
+  
+  /* Tipografia */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  
+  /* Line Heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+  
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Layout */
+  --container-max: 1200px;
+  
+  /* Transitions */
+  --transition-base: 250ms;
+}
+
+/* Light Mode - Design Profissional e Vibrante */
+body.light {
+  --color-dark: #F0F4F8;
+  --color-surface: #FFFFFF;
+  --color-border: #CBD5E1;
+  --color-accent: #0284C7;
+  --color-accent-hover: #0369A1;
+  
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+}
+
+/* Light Mode - Cards com Sombras Fortes */
+body.light .card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+body.light .card:hover {
+  box-shadow: 0 12px 40px rgba(2, 132, 199, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+/* Light Mode - Tipografia */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4 {
+  color: #0F172A;
+}
+
+body.light p {
+  color: #334155;
+}
+
+/* Light Mode - Botões */
+body.light .btn-primary {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+body.light .btn-primary:hover {
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
+}
+
+body.light .btn-outline {
+  background: transparent;
+  border: 2px solid #0284C7;
+  color: #0284C7;
+}
+
+body.light .btn-outline:hover {
+  background: #0284C7;
+  color: #FFFFFF;
+}
+
+/* Light Mode - Scrollbar */
+body.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+body.light ::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+}
+
+body.light ::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
+
+/* Light Mode - Navbar */
+body.light nav {
+  backdrop-filter: blur(16px);
+}
+
+body.light nav[style*="0.7"] {
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.light nav[style*="0.95"] {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Mode - Accent Colors */
+body.light [style*="background: rgba(0, 213, 255"] {
+  background: rgba(2, 132, 199, 0.1) !important;
+}
+
+/* Light Mode - Text Gradient */
+body.light .text-gradient {
+  background: linear-gradient(90deg, #0284C7, #0369A1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light Mode - Contact Section */
+body.light .contact-card {
+  background: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light .contact-card:hover {
+  border-color: #0284C7 !important;
+}
+
+body.light .contact-icon-bg {
+  background: rgba(2, 132, 199, 0.1) !important;
+  color: #0284C7 !important;
+}
+
+body.light input,
+body.light textarea {
+  background: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+body.light input::placeholder,
+body.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+body.light input:focus,
+body.light textarea:focus {
+  border-color: #0284C7 !important;
+  background: #FFFFFF !important;
+}
+
+body.light label {
+  color: #475569 !important;
+}
+
+body.light .contact-link-label {
+  color: #64748B !important;
+}
+
+body.light .contact-link-value {
+  color: #0F172A !important;
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  background-color: var(--color-dark);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-base) ease, 
+              color var(--transition-base) ease;
+}
+
+/* ==========================================================================
+   TIPOGRAFIA
+   ========================================================================== */
+
+h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-primary);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: var(--text-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--text-5xl);
+  }
+  
+  h2 {
+    font-size: var(--text-3xl);
+  }
+  
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  
+  p {
+    font-size: var(--text-base);
+  }
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .grid-12 {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* ==========================================================================
+   COMPONENTES
+   ========================================================================== */
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base) ease, 
+              box-shadow var(--transition-base) ease;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-xl);
+  }
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 767px) {
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--transition-base) ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 213, 255, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-accent), #00C9FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ==========================================================================
+   ANIMAÇÕES
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE
+   ========================================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-base) ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.transition-smooth {
+  transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Grid Utilities */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .md\:flex-row {
+    flex-direction: row !important;
+  }
+  
+  .md\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+  
+  .md\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+  
+  .md\:text-base {
+    font-size: var(--text-base) !important;
+  }
+  
+  .md\:text-sm {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .md\:text-xs {
+    font-size: var(--text-xs) !important;
+  }
+  
+  .md\:gap-md {
+    gap: var(--space-md) !important;
+  }
+  
+  .md\:mb-xl {
+    margin-bottom: var(--space-xl) !important;
+  }
+  
+  .md\:mb-lg {
+    margin-bottom: var(--space-lg) !important;
+  }
+  
+  .md\:w-14 {
+    width: 56px !important;
+  }
+  
+  .md\:h-14 {
+    height: 56px !important;
+  }
+  
+  .md\:w-10 {
+    width: 40px !important;
+  }
+  
+  .md\:h-0\.75 {
+    height: 3px !important;
+  }
+  
+  .md\:w-2\.5 {
+    width: 10px !important;
+  }
+  
+  .md\:h-2 {
+    height: 8px !important;
+  }
+  
+  .md\:w-5 {
+    width: 20px !important;
+  }
+  
+  .md\:h-5 {
+    height: 20px !important;
+  }
+  
+  .md\:top-lg {
+    top: var(--space-lg) !important;
+  }
+  
+  .md\:right-lg {
+    right: var(--space-lg) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .md\:flex {
+    display: flex !important;
+  }
+}
