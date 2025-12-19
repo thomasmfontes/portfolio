@@ -7,20 +7,20 @@ const contactLinks = [
   {
     icon: Mail,
     label: 'E-mail',
-    value: 'thomas@email.com',
-    href: 'mailto:thomas@email.com',
+    value: 'thomas@fontes.com',
+    href: 'mailto:thomas@fontes.com',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: '/in/fulano-dev',
-    href: 'https://linkedin.com',
+    value: '/in/thomas-mineu-fontes-8406b2220',
+    href: 'https://www.linkedin.com/in/thomas-mineu-fontes-8406b2220/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: '@fulanodev',
-    href: 'https://github.com',
+    value: '@thomasmfontes',
+    href: 'https://github.com/thomasmfontes',
   },
 ];
 
