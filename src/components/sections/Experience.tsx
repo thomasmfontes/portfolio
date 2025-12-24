@@ -54,19 +54,19 @@ const ExperienceCard: React.FC<ExperienceCardProps> = memo(({ experience, index 
       
       <div className="card">
         <div className="mb-4">
-          <h3 className="text-white mb-2">{role}</h3>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-gray-400 text-sm">
-            <span>{company}</span>
+          <h3 className="mb-2" style={{ color: 'var(--color-text-primary)' }}>{role}</h3>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+            <span style={{ color: 'var(--color-text-secondary)' }}>{company}</span>
             <span className="hidden sm:block">•</span>
-            <span className="text-[#A8CFDE]">{period}</span>
+            <span style={{ color: 'var(--color-accent)' }}>{period}</span>
           </div>
         </div>
         
         <ul className="space-y-2">
           {achievements.map((achievement, i) => (
-            <li key={i} className="flex gap-3 text-gray-400 text-sm">
-              <span className="text-[#A8CFDE] mt-1" aria-hidden="true">→</span>
-              <span>{achievement}</span>
+            <li key={i} className="flex gap-3 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+              <span className="mt-1" style={{ color: 'var(--color-accent)' }} aria-hidden="true">→</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>{achievement}</span>
             </li>
           ))}
         </ul>
